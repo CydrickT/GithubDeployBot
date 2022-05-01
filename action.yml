@@ -1,0 +1,39 @@
+name: 'Github Workflow Slack Bot'
+description: 'Allows a Slack user to authorize a deployment / build or not.'
+inputs:
+  authorization-server-url:
+    description: 'URL to reach the authorization server. Consider using Github Secrets for this value.'
+    required: true
+  slack-channel-id:
+    description: 'ID of the channel. Can be obtained by copying the link to the channel and getting what follows /archives. Consider using Github Secrets. Consider using Github Secrets for this value. For instance: A785C9271BD'
+    required: true
+  slack-bot-oauth-token:
+    description: 'Slack Bot OAuth Token. Consider using Github Secrets for this value. For instance: xoxb-XXXXXXXXXXXX-TTTTTTTTTTTTTT'
+    required: true
+  version:
+    description: 'Version being deployed. Can be a branch or tag name. Consider using bash variable: GITHUB_REF'
+    required: true
+  requestor:
+    description: 'Person requesting the deploy. Consider using context variable: github.actor'
+    required: true
+  build-type:
+    description: 'Identifier for the build type. Can be any string.'
+    required: true
+  deployment-environments:
+    description: 'A JSON Array of environments for this build to be deployed to. For instance: ["ENV 1, "ENV 2"]'
+    required: true
+  whitelisted-environments:
+    description: 'List of environments that are whitelisted. If all the environments in the deploy-environments variable are contained within the whitelisted-environment, the build is automatically approved without manual approval.  For instance: ["ENV 1, "ENV 2"]'
+    required: false
+    default: "[]"
+  timezone:
+    description: 'The timezone to use for the date displayed in Slack. For instance: America/New_York'
+    required: false
+    default: 'America/New_York'
+  timeout:
+    description: 'The timeout in minutes before the build will automatically fail. Is 5 minutes by default.'
+    required: false
+    default: 5
+runs:
+  using: 'node16'
+  main: 'github-action/index.js'

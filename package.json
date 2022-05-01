@@ -1,0 +1,30 @@
+{
+  "name": "githubdeploybot",
+  "version": "1.0.0",
+  "description": "This is an integration between a GitHub action and a Slack Bot. It allows to let users of a Slack channel to authorize or not a deploy. Informations such as the environment to deploy to and the user are presented to the user of the Slack channel.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CydrickT/GithubDeployBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CydrickT/GithubDeployBot/issues"
+  },
+  "homepage": "https://github.com/CydrickT/GithubDeployBot#readme",
+  "dependencies": {
+    "@actions/core": "^1.7.0",
+    "@actions/github": "^5.0.1",
+    "axios": "^0.27.2",
+    "thread-sleep": "^2.2.0",
+    "uuid": "^8.3.2"
+  }
+}
