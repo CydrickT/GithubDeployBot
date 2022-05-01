@@ -187,5 +187,6 @@ Here is a list of possible feature improvements:
 - Simplify installation of the various AWS components by providing CLI commands or a script instead of UI-based steps. Note that it would be interesting to tighten the `resource` of the IAM policy `GitHub_Deploy_Bot_Read_Write_Table` at the same time.
 - Have a fully customizable message. Will have to find a solution to handle displaying the current date & time
 -  Be able to send information messages to another Slack channel once the deploy is approved. Essentially the same message without the buttons at the bottom.
+-  Once the timeout is reached, make the buttons disappear on the Slack message and say that the deploy timed out.
 
 PRs are welcome!
