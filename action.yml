@@ -1,5 +1,8 @@
 name: 'Github Deploy Authorization Bot'
 description: 'Allows a Slack user to authorize a deployment / build or not'
+branding:
+  icon: 'check-square'
+  color: 'blue'
 inputs:
   authorization-server-url:
     description: 'URL to reach the authorization server. Consider using Github Secrets for this value.'
