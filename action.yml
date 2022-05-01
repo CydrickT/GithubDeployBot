@@ -1,4 +1,4 @@
-name: 'Github Workflow Slack Bot'
+name: 'Github Deploy Bot'
 description: 'Allows a Slack user to authorize a deployment / build or not.'
 inputs:
   authorization-server-url:
